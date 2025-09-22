@@ -2,28 +2,26 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <title>Сайт переехал</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <!-- авто-перенаправление -->
-  <meta http-equiv="refresh" content="2;url=https://waterprofff.github.io/price_AZ/">
-  <link rel="canonical" href="https://waterprofff.github.io/price_AZ/">
-  <style>
-    body{margin:0;background:#f8fafc;font:16px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;display:grid;place-items:center;min-height:100vh}
-    .card{background:#fff;padding:24px 28px;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.08);text-align:center;max-width:640px}
-    h1{margin:0 0 8px 0;font-size:24px}
-    a{color:#166534;text-decoration:underline}
-    .muted{color:#64748b;font-size:14px;margin-top:8px}
-  </style>
-  <script>
-    // дубль на случай, если meta refresh заблокирован
-    setTimeout(()=>location.replace('https://waterprofff.github.io/price_AZ/'), 2000);
-  </script>
+  <title>Прайс: Бытовые + Пром</title>
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="card">
-    <h1>Сайт переехал</h1>
-    <p>сайт переехал на <a href="https://waterprofff.github.io/price_AZ/">https://waterprofff.github.io/price_AZ/</a></p>
-    <p class="muted">если перенаправление не произошло автоматически, нажмите по ссылке</p>
+  <div class="tabs-wrap">
+    <input type="radio" id="tabdom" name="maintabs" checked>
+    <input type="radio" id="tabpro" name="maintabs">
+    <div class="tabs">
+      <label class="tab" for="tabdom">Бытовые фильтры</label>
+      <label class="tab" for="tabpro">Пром</label>
+    </div>
+    <p class="hint">Кнопки и экспорт работают внутри каждой вкладки автономно.</p>
+    <div class="pane domestic">
+      <iframe src="domestic.html" title="Бытовые фильтры"></iframe>
+    </div>
+    <div class="pane promo">
+      <iframe src="promo.html" title="Пром-прайс"></iframe>
+    </div>
   </div>
 </body>
 </html>

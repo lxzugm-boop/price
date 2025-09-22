@@ -1,0 +1,147 @@
+/* ===== Domestic CSS ===== */
+
+/* оверлей для увеличенного фото */
+.zoom-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.6);
+  display:flex; align-items:center; justify-content:center;
+  z-index:1000;
+}
+.zoom-overlay img{
+  max-width:96vw; max-height:96vh;
+  box-shadow:0 8px 40px rgba(0,0,0,.35);
+  border-radius:10px; cursor:zoom-out; background:#fff;
+}
+
+/* скрыть любые полностью пустые строки (нет текста, картинок и ссылок) */
+table.price tbody tr:not(:has(td:not(:empty), td img, td a)) { display: none; }
+
+:root{
+  --bg:#ffffff; --text:#111; --muted:#555; --line:#e5e7eb; --accent:#0d9488;
+  --thead:#f7fafc; --hover:#fff9c4;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,Segoe UI,Roboto,Arial,sans-serif}
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 200; /* было 10 */
+  display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;
+  padding:10px 14px;background:#fff;border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(120%) blur(4px);
+}
+.header .title{font-weight:800;font-size:18px;margin-right:auto}
+.header input[type=search]{
+  flex:1;min-width:240px;max-width:600px;padding:.7rem .9rem;border:1px solid #b7e4c7;border-radius:.6rem;
+  background:#e9f5ee;color:#111;outline:none;font-size:16px
+}
+.header .btn{padding:.55rem .8rem;border:1px solid #cbd5e1;border-radius:.6rem;background:#fff;cursor:pointer}
+.header .btn.primary{background:#16a34a;color:#fff;border-color:#16a34a}
+.header .group{display:flex;gap:.4rem;align-items:center}
+.container{padding:16px}
+:root{ --header-offset: 0px; }            /* отступ для thead — задаём из JS */
+
+.tblwrap{ overflow: visible !important; position: relative; }
+
+/* заголовок таблицы всегда под шапкой */
+table.price thead th{
+  position: sticky;
+  top: var(--header-offset);              /* <— ничего фиксированного типа 62px */
+  z-index: 150;
+  background:#f8fafc;
+  box-shadow:0 1px 0 rgba(0,0,0,.06);
+}
+
+/* если используете «залипание» первого столбца */
+th:first-child, td:first-child{
+  position: sticky; left: 0;
+  background:#fff; z-index: 140;
+}
+
+
+h2{margin:18px 0 8px 0;font-size:18px}
+.tblwrap{overflow:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+table.price{width:100%;border-collapse:separate;border-spacing:0}
+thead th{
+  position:sticky;top:62px;background:var(--thead);border-bottom:1px solid var(--line);
+  padding:10px;text-align:left;z-index:1
+}
+tbody td{border-bottom:1px solid var(--line);padding:8px 10px;vertical-align:middle}
+tbody tr:hover{background:var(--hover)}
+th:first-child, td:first-child{position:sticky;left:0;background:inherit}
+.imgcell{width:220px}
+.imgcell img{max-width:72px;max-height:72px;border-radius:6px;cursor:zoom-in;display:block;margin:auto}
+a.urla{display:inline-block;padding:.35rem .55rem;border:1px solid #cbd5e1;border-radius:.55rem;background:#fff;color:#111;text-decoration:none;font-weight:600}
+a.urla:hover{border-color:#16a34a}
+.count{opacity:.75;margin-left:8px}
+.toolbar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:.5rem}
+.toolbar label{font-weight:600}
+.input-small{width:6rem;padding:.45rem .5rem;border:1px solid #cbd5e1;border-radius:.5rem}
+.sticky-top{position:sticky;top:0;background:#fff;z-index:9}
+.small{font-size:12px;color:var(--muted)}
+footer{padding:28px 18px;color:#777;border-top:1px solid var(--line)}
+
+/* ---- next style block ---- */
+
+:root{ --header-offset: 0px; }
+.header{ z-index: 200 !important; }
+.tblwrap{ overflow: visible !important; position: relative; }
+table.price thead th{
+  position: sticky;
+  top: var(--header-offset);
+  z-index: 150;
+  background:#f8fafc;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+}
+td.imgcell{ text-align:center; }
+td.imgcell img{ display:block; margin:auto; }
+
+/* ---- next style block ---- */
+
+tr.subcat td{
+  font-weight:700;
+  background:#fff7c2; /* мягко-жёлтый */
+}
+
+/* ---- next style block ---- */
+
+td.promo {
+  background: #ffe4e1;
+  font-weight: 700;
+  color: #b22222;
+}
+
+/* ---- next style block ---- */
+
+${css}
+
+/* ===== Promo CSS ===== */
+
+body{margin:0;background:#fff;font:14px/1.45 system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#111}
+    .header{position:sticky;top:0;z-index:20;display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;padding:10px 14px;background:#fff;border-bottom:1px solid #e5e7eb}
+    .title{font-weight:800;font-size:18px;margin-right:auto}
+    .tblwrap{overflow:auto;border:1px solid #e5e7eb;border-radius:12px;background:#fff;margin:12px}
+    table.price{width:100%;border-collapse:separate;border-spacing:0}
+    thead th{position:sticky;top:0;background:#f8fafc;border-bottom:1px solid #e5e7eb;padding:10px;text-align:left;z-index:1}
+    tbody td{border-bottom:1px solid #e5e7eb;padding:8px 10px;vertical-align:middle}
+    td.num{text-align:right;white-space:nowrap}
+    td.imgcell{width:160px;text-align:center}
+    td.imgcell img{max-width:90px;max-height:90px;border-radius:6px;display:block;margin:auto}
+    a.urla{display:inline-block;padding:.35rem .55rem;border:1px solid #cbd5e1;border-radius:.55rem;background:#fff;color:#111;text-decoration:none;font-weight:600}
+    .toolbar{display:flex;gap:.5rem;align-items:center;margin:10px 12px}
+    label{font-weight:600}
+
+/* ===== Index (tabs) CSS ===== */
+
+body{margin:0;background:#f8fafc;font:14px/1.45 system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#111}
+    .tabs-wrap{margin:10px}
+    .tabs-wrap input[type=radio]{display:none}
+    .tabs{display:flex;gap:6px;flex-wrap:wrap;margin:8px 10px}
+    .tab{padding:.55rem .85rem;border:1px solid #cbd5e1;border-radius:.6rem;cursor:pointer;background:#fff}
+    #tabdom:checked ~ .tabs label[for=tabdom],
+    #tabpro:checked ~ .tabs label[for=tabpro]{background:#16a34a;color:#fff;border-color:#16a34a}
+    .pane{display:none}
+    #tabdom:checked ~ .pane.domestic{display:block}
+    #tabpro:checked ~ .pane.promo{display:block}
+    iframe{width:100%;height:calc(100vh - 90px);border:0;background:#fff;border-top:1px solid #e5e7eb}
+    .hint{margin:0 12px;color:#64748b;font-size:12px}
